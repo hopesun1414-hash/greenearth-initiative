@@ -634,8 +634,13 @@
           return;
         }
 
-        window.location.href =
-          "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
+        const gmailUrl =
+  "https://mail.google.com/mail/?view=cm&fs=1" +
+  "&to=" + encodeURIComponent(recipient) +
+  "&su=" + encodeURIComponent(subject) +
+  "&body=" + encodeURIComponent(body);
+
+window.open(gmailUrl, "_blank");
       }
     );
   </script>
