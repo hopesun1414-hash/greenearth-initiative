@@ -616,31 +616,23 @@
         // Replace this placeholder with a real project email address.
         const recipient = "hopesun1414@gmail.com";
 
-        const subject = encodeURIComponent(
-          "GreenEarth website enquiry from " + name
-        );
 
-        const body = encodeURIComponent(
-          "Name: " + name +
-          "\nEmail: " + email +
-          "\n\nMessage:\n" + message
-        );
+const subject =
+  "GreenEarth website enquiry from " + name;
 
-        if (recipient === "YOUR-EMAIL@example.com") {
-          alert(
-            "The contact form is ready, but the owner must add a real " +
-            "email address in the JavaScript before it can send a message."
-          );
-          return;
-        }
+const body =
+  "Name: " + name +
+  "\nEmail: " + email +
+  "\n\nMessage:\n" + message;
 
-        const gmailUrl =
+const gmailUrl =
   "https://mail.google.com/mail/?view=cm&fs=1" +
   "&to=" + encodeURIComponent(recipient) +
   "&su=" + encodeURIComponent(subject) +
   "&body=" + encodeURIComponent(body);
 
 window.open(gmailUrl, "_blank");
+
       }
     );
   </script>
