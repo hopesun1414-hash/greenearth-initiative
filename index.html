@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="GreenEarth Initiative promotes forest restoration, wildlife protection, cleaner communities and climate awareness.">
+
+  <title>GreenEarth Initiative | Protect Our Planet</title>
+
+  <style>
+    :root {
+      --green: #244b35;
+      --deep-green: #153324;
+      --light-green: #e7eee5;
+      --cream: #f7f5ed;
+      --earth: #9b704a;
+      --text: #26332a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px #0000000b;
+    }
+
+    .brand {
+      color: var(--green);
+      font-size: 21px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: var(--earth);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--green);
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      padding: 80px 9%;
+      color: white;
+      background:
+        linear-gradient(90deg, #102b20e8, #102b2080, #102b2030),
+        url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 690px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 18px;
+      color: #d5e5b9;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.1;
+      margin-bottom: 23px;
+    }
+
+    .hero p {
+      max-width: 560px;
+      font-size: 17px;
+      color: #f0f3ed;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 5px;
+      background: #d8e5b8;
+      color: var(--deep-green);
+      text-decoration: none;
+      font-weight: bold;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: white;
+    }
+
+    .button-dark {
+      background: var(--green);
+      color: white;
+    }
+
+    .button-dark:hover {
+      background: var(--deep-green);
+    }
+
+    section {
+      padding: 80px 9%;
+      scroll-margin-top: 75px;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--earth);
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: #59665c;
+    }
+
+    .mission-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .mission-image {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .mission-copy h2 {
+      color: var(--green);
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .mission-copy p {
+      margin-bottom: 18px;
+      color: #59665c;
+    }
+
+    .projects {
+      background: var(--light-green);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px #1b39200b;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-copy {
+      padding: 24px;
+    }
+
+    .project-copy h3 {
+      color: var(--green);
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .project-copy p {
+      color: #59665c;
+    }
+
+    .involve {
+      background: var(--deep-green);
+      color: white;
+      text-align: center;
+    }
+
+    .involve h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      margin-bottom: 15px;
+    }
+
+    .involve p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #e1e8df;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 45px;
+    }
+
+    .contact-layout h2 {
+      color: var(--green);
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .contact-layout p {
+      color: #59665c;
+      margin-bottom: 15px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-top: 6px;
+      padding: 13px;
+      border: 1px solid #cbd3c9;
+      border-radius: 5px;
+      background: white;
+      font: inherit;
+    }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: #687568;
+    }
+
+    footer {
+      padding: 28px 7%;
+      text-align: center;
+      background: #10271b;
+      color: #e2e9e0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 15px 0 5px;
+        gap: 15px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 520px;
+        padding: 65px 7%;
+      }
+
+      section {
+        padding: 60px 7%;
+      }
+
+      .mission-layout,
+      .contact-layout,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-image {
+        height: 270px;
+      }
+
+      .project-card img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="#home" class="brand">🌿 GreenEarth</a>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#mission">Our Mission</a>
+      <a href="#projects">Projects</a>
+      <a href="#involve">Get Involved</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">A greener future starts today</p>
+
+        <h1>Protect Nature.<br>Restore Our Planet.</h1>
+
+        <p>
+          Every forest protected, every tree planted and every
+          community empowered brings us closer to a healthier planet.
+          Join us in caring for the Earth we share.
+        </p>
+
+        <a href="#projects" class="button">Explore Our Mission</a>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="mission-layout">
+        <img
+          class="mission-image"
+          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=85"
+          alt="Sunlight filtering through a lush green forest"
+          loading="lazy">
+
+        <div class="mission-copy">
+          <p class="eyebrow">Why conservation matters</p>
+
+          <h2>A healthier planet for generations to come</h2>
+
+          <p>
+            Nature supports our lives through clean air, fresh water,
+            healthy soil and habitats for wildlife. Protecting it
+            requires action from individuals and communities alike.
+          </p>
+
+          <p>
+            GreenEarth Initiative is a demonstration project focused
+            on environmental education, habitat restoration,
+            responsible waste management and climate awareness.
+          </p>
+
+          <a href="#involve" class="button button-dark">Be Part of the Change</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">Our focus areas</p>
+        <h2>Small actions. Lasting impact.</h2>
+        <p>
+          Explore the key areas where conservation efforts can help
+          protect ecosystems and support thriving communities.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <img
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80"
+            alt="Dense green forest"
+            loading="lazy">
+
+          <div class="project-copy">
+            <h3>Forest Restoration</h3>
+            <p>
+              Encourage native tree planting, protect existing forests
+              and raise awareness about the value of healthy ecosystems.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img
+            src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?auto=format&fit=crop&w=900&q=80"
+            alt="Wildlife in a natural habitat"
+            loading="lazy">
+
+          <div class="project-copy">
+            <h3>Wildlife Protection</h3>
+            <p>
+              Promote respect for wildlife and protect the natural
+              habitats that animals need to survive.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img
+            src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80"
+            alt="Recycling and waste management"
+            loading="lazy">
+
+          <div class="project-copy">
+            <h3>Cleaner Communities</h3>
+            <p>
+              Support waste reduction, recycling awareness and
+              community clean-up activities.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img
+            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80"
+            alt="Green hills and misty mountains"
+            loading="lazy">
+
+          <div class="project-copy">
+            <h3>Climate Awareness</h3>
+            <p>
+              Share practical ways to conserve resources, reduce
+              environmental harm and build climate resilience.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="involve" id="involve">
+      <p class="eyebrow">The future is in our hands</p>
+
+      <h2>Be a voice for the planet.</h2>
+
+      <p>
+        Learn about conservation, share environmental knowledge
+        and encourage positive action in your community.
+        A better future begins with what we do today.
+      </p>
+
+      <a href="#contact" class="button">Get in Touch</a>
+    </section>
+
+    <section id="contact">
+      <div class="contact-layout">
+        <div>
+          <p class="eyebrow">Connect with us</p>
+          <h2>Let's care for our planet together.</h2>
+
+          <p>
+            Interested in environmental education, community
+            conservation or collaborating on a project?
+            Send us a message.
+          </p>
+
+          <p>
+            <strong>Email:</strong>
+            Replace this with your project contact email.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label>
+            Your name
+            <input type="text" id="visitorName"
+                   placeholder="Enter your name" required>
+          </label>
+
+          <label>
+            Your email
+            <input type="email" id="visitorEmail"
+                   placeholder="you@example.com" required>
+          </label>
+
+          <label>
+            Your message
+            <textarea id="visitorMessage"
+                      placeholder="How would you like to get involved?"
+                      required></textarea>
+          </label>
+
+          <button type="submit" class="button button-dark">
+            Prepare Email
+          </button>
+
+          <p class="form-note">
+            Demonstration form: your email application will open
+            to prepare a message. No information is stored by this site.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="year"></span> GreenEarth Initiative.
+      Environmental awareness starts with us.
+    </p>
+    <p>Student portfolio demonstration project.</p>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close the mobile menu after a link is selected
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Automatically update the copyright year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Prepare an email using the visitor's email application
+    document.getElementById("contactForm").addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("visitorName").value.trim();
+        const email = document.getElementById("visitorEmail").value.trim();
+        const message = document.getElementById("visitorMessage").value.trim();
+
+        // Replace this placeholder with a real project email address.
+        const recipient = "YOUR-EMAIL@example.com";
+
+        const subject = encodeURIComponent(
+          "GreenEarth website enquiry from " + name
+        );
+
+        const body = encodeURIComponent(
+          "Name: " + name +
+          "\nEmail: " + email +
+          "\n\nMessage:\n" + message
+        );
+
+        if (recipient === "YOUR-EMAIL@example.com") {
+          alert(
+            "The contact form is ready, but the owner must add a real " +
+            "email address in the JavaScript before it can send a message."
+          );
+          return;
+        }
+
+        window.location.href =
+          "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
+      }
+    );
+  </script>
+
+</body>
+</html>
